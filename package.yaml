@@ -32,6 +32,7 @@ dependencies:
   - unliftio-core
   - unordered-containers
   - vector
+  - QuickCheck
 
 default-extensions:
   - AutoDeriveTypeable
