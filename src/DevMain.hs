@@ -6,11 +6,8 @@ import           Data.Typeable
 
 import qualified Hamburger
 import qualified StateMonad
+import qualified Fin
 
 
 run :: IO ()
-run = Hamburger.run
-
-
-runStateMonad :: IO ()
-runStateMonad = StateMonad.run
+run = Fin.run
