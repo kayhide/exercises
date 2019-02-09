@@ -3,6 +3,9 @@ module Hamburger where
 
 import           ClassyPrelude
 
+import           Data.Proxy
+import           Data.Typeable
+
 data Fail
 
 data Topping = Meat | Bacon | Egg | Lettuce | Tomato | Cheese
@@ -26,3 +29,11 @@ type CheeseBurger = Hamburger :<<< 'Cheese
 type DoubleCheeseBurger = CheeseBurger :<<< 'Cheese
 type BaconLettuceTomatoBurger = Hamburger :<<< 'Bacon :<<< 'Lettuce :<<< 'Tomato
 type BaconEggDoubleCheeseBurger = DoubleCheeseBurger :<<< 'Bacon :<<< 'Egg
+
+
+run :: IO ()
+run = do
+  print . typeRep $ Proxy @CheeseBurger
+  print . typeRep $ Proxy @DoubleCheeseBurger
+  print . typeRep $ Proxy @BaconLettuceTomatoBurger
+  print . typeRep $ Proxy @BaconEggDoubleCheeseBurger -- Fail!
