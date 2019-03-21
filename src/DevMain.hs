@@ -1,13 +1,17 @@
 module DevMain where
 
-import           ClassyPrelude
+import ClassyPrelude
 
-import           Data.Typeable
+import Data.Function
+import Data.Typeable
 
+import qualified Fin
+import qualified Fix
 import qualified Hamburger
 import qualified StateMonad
-import qualified Fin
 
 
 run :: IO ()
 run = Fin.run
+-- run = Fix.run
+
